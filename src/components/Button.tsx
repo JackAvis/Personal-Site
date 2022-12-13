@@ -4,7 +4,7 @@ import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 
 const outline = defineStyle({
   border: '2px dashed', 
-  borderRadius: 0, 
+  borderRadius: '1vw', 
   fontWeight: 'semibold', 
   color: 'facebook'
 })

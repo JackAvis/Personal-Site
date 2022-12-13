@@ -10,10 +10,10 @@ function Navbar() {
         navigate('/');
     }
     return (
-        <nav className='navbar'>
+        <nav className='navbar' color='navy'>
             <div className="links">
                 <Stack direction='row' spacing='20vw' align='center'>
-                    <Button onClick ={navigateHome} variant='test' margin='.3vw'>Home</Button>
+                    <Button onClick ={navigateHome} variant='outline' margin='.3vw'>Home</Button>
                     <Button onClick ={navigateContact} colorScheme='teal'>Contact</Button>
                 </Stack>
             </div>
