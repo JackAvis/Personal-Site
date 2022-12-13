@@ -1,23 +1,22 @@
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbSeparator,
-  } from '@chakra-ui/react'
-
+  import { useNavigate } from "react-router-dom";
+  import { Button, Stack } from '@chakra-ui/react'
 function Navbar() {
+    let navigate = useNavigate(); 
+    const navigateContact = () =>{ 
+        navigate('contact');
+    }
+    const navigateHome = () =>{
+        navigate('/');
+    }
     return (
-        <Breadcrumb>
-            <BreadcrumbItem>
-                <BreadcrumbLink href='#'>Home</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbItem>
-                <BreadcrumbLink href='#'>Docs</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbItem isCurrentPage>
-                <BreadcrumbLink href='#'>Breadcrumb</BreadcrumbLink>
-            </BreadcrumbItem>
-        </Breadcrumb>
+        <nav className='navbar'>
+            <div className="links">
+                <Stack direction='row' spacing='20vw' align='center'>
+                    <Button onClick ={navigateHome} colorScheme='teal' margin='.3vw'>Home</Button>
+                    <Button onClick ={navigateContact} colorScheme='teal'>Contact</Button>
+                </Stack>
+            </div>
+        </nav>
     )
 
   
