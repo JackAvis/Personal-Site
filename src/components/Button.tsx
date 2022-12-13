@@ -17,5 +17,4 @@ const test = defineStyle({
 
 export const buttonTheme = defineStyleConfig({
   variants: { outline, test}, 
-  
 })
