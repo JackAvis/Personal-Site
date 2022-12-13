@@ -1,4 +1,3 @@
-
 function  Contact() {
     return (
         <p>contact info placeholder</p>
