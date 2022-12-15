@@ -1,0 +1,44 @@
+.navbar {
+    background-color: black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.Name{
+    padding: .1vw;
+    font-size: 2.5vh;
+    text-align: center;
+    margin-top: 2.1vh;
+    margin-bottom: auto;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    color: white;
+}
+.NameBox{
+    text-align: center;
+    border-left: 5px;
+    border-top: 2px;
+    border-bottom: 2px;
+    border-width: 3px;
+    border-radius: 2.5px;
+    border-color: white;
+}
+.menuOption {
+    margin: 2vh;
+    font-size: 2vh;
+    transition: color 0.75s ease;
+    transition: border-color .75s ease;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 11px;
+    padding: .5vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: grey;
+}
+
+.menuOption:hover {
+    color: white;
+    cursor: pointer;
+    border-color: white;
+}
