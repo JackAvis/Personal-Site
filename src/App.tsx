@@ -8,7 +8,7 @@ import { Box } from '@chakra-ui/react'
 function App() {
   return (
     <Box className='appContainer' alignItems='center'>
-      <Box className='appContainer' maxWidth='150em' minWidth='30em' width='100vw'>
+      <Box className='appContainer' maxWidth='150em' minWidth='15em' width='100vw'>
         <Router>
           <Navbar />
           <Routes>
