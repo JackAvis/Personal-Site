@@ -1,5 +1,4 @@
 .navbar {
-    background-color: black;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -12,7 +11,7 @@
     margin-bottom: auto;
     padding-left: 2vw;
     padding-right: 2vw;
-    color: white;
+    color: black;
 }
 .NameBox{
     text-align: center;
@@ -21,14 +20,17 @@
     border-bottom: 2px;
     border-width: 3px;
     border-radius: 2.5px;
-    border-color: white;
+    border-color: black;
+}
+.menuContainer{
+    padding-left: 10vw;
 }
 .menuOption {
     margin: 2vh;
     font-size: 2vh;
     transition: color 0.75s ease;
     transition: border-color .75s ease;
-    border-color: black;
+    border-color: #FFF0E6;
     border-width: 2px;
     border-radius: 11px;
     padding: .5vh;
@@ -38,7 +40,7 @@
 }
 
 .menuOption:hover {
-    color: white;
+    color: black;
     cursor: pointer;
-    border-color: white;
+    border-color: black;
 }
