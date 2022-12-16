@@ -1,8 +1,10 @@
 .App {
   text-align: center;
 }
+
 .appContainer{
   background-color: #ffeadc;
+  overflow-x: hidden;
 }
 .appContainer {
   margin: 0;

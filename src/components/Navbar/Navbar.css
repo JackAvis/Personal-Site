@@ -82,6 +82,10 @@
     padding-top: 2vh;
 }
 
+.endPage{
+    padding-top: 3vh;
+}
+
 
 
 @keyframes fadeInAnimation {
