@@ -16,6 +16,7 @@ function Navbar() {
             color={color == "black" ? "#ffeadc" : color}
             bgColor={color == "grey" ? "#ffeadc" : color}
             borderColor={color == "grey" ? "#ffeadc" : color}
+            fontSize={[12, 20, 22]}
             className="menuOption"
             onClick={() => navigateToPage(text, page)}
         >
@@ -23,11 +24,11 @@ function Navbar() {
         </Box>)
     }
 
-    const createIcon = (icon: string, size: string, marginTop: string, link: string) => {
+    const createIcon = (icon: string, size: string, marginTop: number, link: string) => {
         return (
             <LinkBox>
                 <Link href={link} isExternal>
-                    <Image src={icon} justifyContent='left' marginTop={marginTop} boxSize={size} alt="Logo" />
+                    <Image src={icon} justifyContent='left' marginTop={[17.4 + marginTop, 20 + marginTop, 26 + marginTop]}boxSize={size} alt="Logo" />
                 </Link>
             </LinkBox>
 
@@ -44,8 +45,8 @@ function Navbar() {
                         {optionSelected === 'Contact' ? createOption("black", "Contact", "contact") : createOption("grey", "Contact", "contact")}
                     </Flex>
                     <Flex className="iconContainer" justify='right' w='100%'>
-                        {createIcon(githubLogo, '3.45vh', '2.4vh', 'https://github.com/Jackson-Davis1')}
-                        {createIcon(linkedinLogo, '3.1vh', '2.6vh', 'https://linkedin.com/in/jackson-davis-931a35175')}
+                        {createIcon(githubLogo, '3.45vh', 1, 'https://github.com/Jackson-Davis1')}
+                        {createIcon(linkedinLogo, '3.1vh', 2.5, 'https://linkedin.com/in/jackson-davis-931a35175')}
                     </Flex>
                 </Stack>
             </nav>

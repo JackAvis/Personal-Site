@@ -10,9 +10,8 @@
 .menuOption {
     margin-bottom: 1vh;
     margin-top: 2vh;
-    margin-right: 2vh;
+    margin-right: 2vw;
     margin-left: 2vh;
-    font-size: 2vh;
     transition: color 1 ease;
     transition: border-color 1s ease-in-out;
     transition: background-color .75s ease-in-out;
