@@ -1,32 +1,98 @@
-
-.navBox{
+.navBox {
     border-color: black;
     border-left: 1px;
     border-right: 1px;
     border-top: 1px;
     border-width: 4px;
     border-radius: 5px;
-    margin-bottom: 2vh;
 }
+
 .menuOption {
     margin-bottom: 1vh;
     margin-top: 2vh;
     margin-right: 2vh;
     margin-left: 2vh;
     font-size: 2vh;
-    transition: color 0.75s ease;
-    transition: border-color .75s ease;
+    transition: color 1 ease;
+    transition: border-color 1s ease-in-out;
+    transition: background-color .75s ease-in-out;
     border-color: #ffeadc;
-    border-width: 2px;
-    border-radius: 11px;
+    background-color: #ffeadc;
+    border-width: .3vh;
+    border-radius: 10px;
     padding: .5vh;
-    padding-left: 10px;
+    padding-left: 11px;
     padding-right: 10px;
     color: grey;
 }
 
 .menuOption:hover {
-    color: black;
+    color: #ffeadc;
     cursor: pointer;
+    background-color: black;
     border-color: black;
+}
+
+/* css for pages */
+.textContainer {
+    background-color: #ffeadc;
+    animation: fadein 2s;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.sectionContainer {
+    border-color: black;
+    border-bottom-width: 3px;
+    border-top-width: 3px;
+    border-radius: 10px;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+
+}
+
+.sectionTitle {
+    font-size: 4.5vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    font-weight: bold;
+    text-align: left;
+    text-decoration: underline;
+}
+
+.header {
+    font-size: 3.25vh;
+    padding-bottom: 2vh;
+    font-weight: bold;
+    text-align: left;
+    font-style: italic;
+}
+
+.bulletPoint {
+    padding-bottom: 1vh;
+    list-style-position: inside;
+    font-size: 2vh;
+    padding-left: 3vw;
+}
+
+.description {
+    font-size: 20px;
+    padding-bottom: 5vh;
+    padding-top: 2vh;
+}
+
+
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        background-color: #ffeadc;
+    }
+
+    100% {
+        opacity: 1;
+        background-color: #ffeadc;
+
+    }
 }

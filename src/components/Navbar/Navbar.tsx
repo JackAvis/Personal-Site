@@ -13,7 +13,8 @@ function Navbar() {
     }
     const createOption = (color: string, text: string, page: string) => {
         return (<Box
-            color={color}
+            color={color == "black" ? "#ffeadc" : color}
+            bgColor={color == "grey" ? "#ffeadc" : color}
             borderColor={color == "grey" ? "#ffeadc" : color}
             className="menuOption"
             onClick={() => navigateToPage(text, page)}
@@ -39,6 +40,7 @@ function Navbar() {
                 <Stack direction='row'>
                     <Flex className="menuContainer" justify='right'>
                         {optionSelected === 'Home' ? createOption("black", "Home", "/") : createOption("grey", "Home", "/")}
+                        {optionSelected === 'Experience' ? createOption("black", "Experience", "experience") : createOption("grey", "Experience", "experience")}
                         {optionSelected === 'Contact' ? createOption("black", "Contact", "contact") : createOption("grey", "Contact", "contact")}
                     </Flex>
                     <Flex className="iconContainer" justify='right' w='100%'>
