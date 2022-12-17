@@ -4,10 +4,14 @@ import "./Navbar.css"
 import { Stack, Box, Flex, Image, Icon, Link, LinkBox } from '@chakra-ui/react'
 import linkedinLogo from './Icons/Linkedin.png'
 import githubLogo from './Icons/Github.png'
-function Navbar() {
-    const [optionSelected, setOptionSelected] = useState('Home');
+type NavBarProps = {
+    page: string;
+    text: string;
+}
+function Navbar(props: NavBarProps) {
+    const [optionSelected, setOptionSelected] = useState(props.page);
     let navigate = useNavigate();
-    const navigateToPage = (text: string, page: string) => {
+    function navigateToPage(text: string, page: string) {
         navigate(page);
         setOptionSelected(text);
     }
@@ -23,12 +27,11 @@ function Navbar() {
             {text}
         </Box>)
     }
-
     const createIcon = (icon: string, size: string, marginTop: number, link: string) => {
         return (
             <LinkBox>
                 <Link href={link} isExternal>
-                    <Image src={icon} justifyContent='left' marginTop={[17.4 + marginTop, 20 + marginTop, 26 + marginTop]}boxSize={size} alt="Logo" />
+                    <Image className="icon" src={icon} justifyContent='left' marginTop={[17.4 + marginTop, 20 + marginTop, 26 + marginTop]}boxSize={size} alt="Logo" />
                 </Link>
             </LinkBox>
 

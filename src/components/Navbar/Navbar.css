@@ -7,6 +7,9 @@
     border-radius: 5px;
 }
 
+.iconContainer{
+    margin-top: 2vh;
+}
 .menuOption {
     margin-bottom: 1vh;
     margin-top: 2vh;
@@ -98,4 +101,25 @@
         background-color: #ffeadc;
 
     }
+}
+
+/* css for home page */
+
+.pfp{
+    margin-top: 2vh;
+    border-radius: 1000px;
+}
+.pfpTitle {
+    font-size: 4.5vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    font-weight: bold;
+}
+
+.pfpDescription {
+    font-size: 20px;
+    padding-bottom: 5vh;
+    padding-top: 2vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
 }

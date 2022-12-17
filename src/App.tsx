@@ -11,9 +11,9 @@ function App() {
     <Box className='appContainer' alignItems='center'>
       <Box className='appContainer' maxWidth='150em' minWidth='15em' width='100vw'>
         <Router>
-          <Navbar />
+          <Navbar text="Home" page=" "/>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home button={<h1>test</h1>}/>} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/experience" element={<Experience />} />
           </Routes>
