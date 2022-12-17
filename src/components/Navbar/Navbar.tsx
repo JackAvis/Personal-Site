@@ -9,7 +9,7 @@ type NavBarProps = {
     text: string;
 }
 function Navbar(props: NavBarProps) {
-    const [optionSelected, setOptionSelected] = useState(props.page);
+    const [optionSelected, setOptionSelected] = useState("Home");
     let navigate = useNavigate();
     function navigateToPage(text: string, page: string) {
         navigate(page);
