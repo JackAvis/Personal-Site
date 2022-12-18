@@ -1,15 +1,15 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
 import "./Navbar.css"
-import { Stack, Box, Flex, Image, Icon, Link, LinkBox } from '@chakra-ui/react'
+import { Stack, Box, Flex, Image, Link, LinkBox } from '@chakra-ui/react'
 import linkedinLogo from './Icons/Linkedin.png'
 import githubLogo from './Icons/Github.png'
 type NavBarProps = {
-    page: string;
-    text: string;
+    setOption: Function;
+    optionSelected: string;
 }
 function Navbar(props: NavBarProps) {
-    const [optionSelected, setOptionSelected] = useState("Home");
+    let optionSelected = props.optionSelected;
+    let setOptionSelected = props.setOption;
     let navigate = useNavigate();
     function navigateToPage(text: string, page: string) {
         navigate(page);
@@ -17,9 +17,9 @@ function Navbar(props: NavBarProps) {
     }
     const createOption = (color: string, text: string, page: string) => {
         return (<Box
-            color={color == "black" ? "#ffeadc" : color}
-            bgColor={color == "grey" ? "#ffeadc" : color}
-            borderColor={color == "grey" ? "#ffeadc" : color}
+            color={color === "black" ? "#ffeadc" : color}
+            bgColor={color === "grey" ? "#ffeadc" : color}
+            borderColor={color === "grey" ? "#ffeadc" : color}
             fontSize={[12, 20, 22]}
             className="menuOption"
             onClick={() => navigateToPage(text, page)}
