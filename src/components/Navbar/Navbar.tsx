@@ -5,16 +5,13 @@ import linkedinLogo from './Icons/Linkedin.png'
 import githubLogo from './Icons/Github.png'
 import {primaryColor, secondaryColor, tertiaryColor} from  '../../../src/Constants'
 type NavBarProps = {
-    setOption: Function;
     optionSelected: string;
 }
 function Navbar(props: NavBarProps) {
     let optionSelected = props.optionSelected;
-    let setOptionSelected = props.setOption;
     let navigate = useNavigate();
     function navigateToPage(text: string, page: string) {
         navigate(page);
-        setOptionSelected(text);
     }
     const createOption = (color: string, text: string, page: string) => {
         return (<Box

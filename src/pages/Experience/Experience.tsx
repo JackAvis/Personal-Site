@@ -1,8 +1,11 @@
 import { Box, Flex, Spacer, Center } from '@chakra-ui/react'
 import { DownloadIcon } from '@chakra-ui/icons'
 import {primaryColor, secondaryColor, tertiaryColor} from  '../../../src/Constants'
-
-function Experience() {
+type ExperienceProps = {
+    setOption: Function;
+}
+function Experience(props: ExperienceProps) {
+    props.setOption("Experience");
     const onButtonClick = () => {
         fetch('sample.pdf').then(response => {
             response.blob().then(blob => {

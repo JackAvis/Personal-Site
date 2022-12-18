@@ -9,6 +9,7 @@ type HomeProps = {
 }
 
 function Home(props: HomeProps) {
+    props.setOption("Home");
     let navigate = useNavigate();
     function navigateToPage(text: string, page: string) {
         navigate(page);
