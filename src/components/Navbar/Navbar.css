@@ -1,5 +1,5 @@
 .navBox {
-    border-color: black;
+    border-color: var(--secondary-color);
     border-left: 1px;
     border-right: 1px;
     border-top: 1px;
@@ -10,6 +10,16 @@
 .iconContainer{
     margin-top: 2vh;
 }
+.icon{
+    margin-top: 0px;
+    transition: margin-top ease-in 0.1s;
+}
+
+.icon:hover{
+    margin-top:-1vh;
+}
+
+
 .menuOption {
     margin-bottom: 1vh;
     margin-top: 2vh;
@@ -21,7 +31,7 @@
     border-color: var(--primary-color);
     background-color: var(--primary-color);
     border-width: .3vh;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: .5vh;
     padding-left: 11px;
     padding-right: 10px;
@@ -31,13 +41,14 @@
 .menuOption:hover {
     color: var(--primary-color);
     cursor: pointer;
-    background-color: black;
-    border-color: black;
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
 }
 
 /* css for pages */
 .textContainer {
     background-color: var(--primary-color);
+    color: var(--secondary-color);
     animation: fadein 2s;
     animation: fadeInAnimation ease 2s;
     animation-iteration-count: 1;
@@ -45,7 +56,8 @@
 }
 
 .sectionContainer {
-    border-color: black;
+    border-color: var(--secondary-color);
+
     border-bottom-width: 3px;
     border-top-width: 3px;
     border-radius: 10px;

@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #ffeadc;
+  --primary-color: #fff3eb;
   --secondary-color: black;
-  --tertiary-color: grey;
+  --tertiary-color:grey;
 }
 .App {
   text-align: center;

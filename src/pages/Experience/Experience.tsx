@@ -48,7 +48,7 @@ function Experience() {
                         color={primaryColor}
                         bgColor={secondaryColor}
                         borderColor={secondaryColor}
-                        fontSize={[6, 13, 15]}
+                        fontSize={[10, 13, 15]}
                         className="menuOption"
                         onClick={() => onButtonClick()}
                     >
