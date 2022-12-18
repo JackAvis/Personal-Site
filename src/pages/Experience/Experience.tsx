@@ -1,5 +1,19 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Flex, Spacer, Center } from '@chakra-ui/react'
+import { DownloadIcon } from '@chakra-ui/icons'
+import {primaryColor, secondaryColor, tertiaryColor} from  '../../../src/Constants'
+
 function Experience() {
+    const onButtonClick = () => {
+        fetch('sample.pdf').then(response => {
+            response.blob().then(blob => {
+                const fileURL = window.URL.createObjectURL(blob);
+                let alink = document.createElement('a');
+                alink.href = fileURL;
+                alink.download = 'sample.pdf';
+                alink.click();
+            })
+        })
+    }
     return (
         <div>
             <Box className="textContainer">
@@ -28,8 +42,21 @@ function Experience() {
 
                     </ul>
                 </Box>
+                <Flex alignContent="left">
+                    <Spacer />
+                    <Box
+                        color={primaryColor}
+                        bgColor={secondaryColor}
+                        borderColor={secondaryColor}
+                        fontSize={[6, 13, 15]}
+                        className="menuOption"
+                        onClick={() => onButtonClick()}
+                    >
+                        Download Resume <DownloadIcon />
+                    </Box>
+                </Flex>
+                <Box className="endPage" />
             </Box>
-        <Box className="endPage" />
         </div>
 
     );

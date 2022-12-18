@@ -3,6 +3,7 @@ import "./Navbar.css"
 import { Stack, Box, Flex, Image, Link, LinkBox } from '@chakra-ui/react'
 import linkedinLogo from './Icons/Linkedin.png'
 import githubLogo from './Icons/Github.png'
+import {primaryColor, secondaryColor, tertiaryColor} from  '../../../src/Constants'
 type NavBarProps = {
     setOption: Function;
     optionSelected: string;
@@ -17,9 +18,9 @@ function Navbar(props: NavBarProps) {
     }
     const createOption = (color: string, text: string, page: string) => {
         return (<Box
-            color={color === "black" ? "#ffeadc" : color}
-            bgColor={color === "grey" ? "#ffeadc" : color}
-            borderColor={color === "grey" ? "#ffeadc" : color}
+            color={color === secondaryColor ? primaryColor : color}
+            bgColor={color === tertiaryColor ? primaryColor : color}
+            borderColor={color === tertiaryColor ? primaryColor : color}
             fontSize={[12, 20, 22]}
             className="menuOption"
             onClick={() => navigateToPage(text, page)}
@@ -37,15 +38,14 @@ function Navbar(props: NavBarProps) {
 
         )
     }
-
     return (
         <Box className='navBox'>
             <nav className='navbar'>
                 <Stack direction='row'>
                     <Flex className="menuContainer" justify='right'>
-                        {optionSelected === 'Home' ? createOption("black", "Home", "/") : createOption("grey", "Home", "/")}
-                        {optionSelected === 'Experience' ? createOption("black", "Experience", "experience") : createOption("grey", "Experience", "experience")}
-                        {optionSelected === 'Contact' ? createOption("black", "Contact", "contact") : createOption("grey", "Contact", "contact")}
+                        {optionSelected === 'Home' ? createOption(secondaryColor, "Home", "/") : createOption(tertiaryColor, "Home", "/")}
+                        {optionSelected === 'Experience' ? createOption(secondaryColor, "Experience", "experience") : createOption(tertiaryColor, "Experience", "experience")}
+                        {optionSelected === 'Contact' ? createOption(secondaryColor, "Contact", "contact") : createOption(tertiaryColor, "Contact", "contact")}
                     </Flex>
                     <Flex className="iconContainer" justify='right' w='100%'>
                         {createIcon(githubLogo, '3.45vh', 1, 'https://github.com/Jackson-Davis1')}

@@ -1,6 +1,7 @@
 import { Center, Box, Image } from '@chakra-ui/react'
 import { useNavigate } from "react-router-dom";
 import { ChevronRightIcon } from '@chakra-ui/icons'
+import {primaryColor, secondaryColor, tertiaryColor} from  '../../../src/Constants'
 import pfp from "./defaultpfp.jpg"
 
 type HomeProps = {
@@ -16,9 +17,9 @@ function Home(props: HomeProps) {
 
     const createOption = (color: string, text: string, page: string) => {
         return (<Box
-            color={color === "black" ? "#ffeadc" : color}
-            bgColor={color === "grey" ? "#ffeadc" : color}
-            borderColor={color === "grey" ? "#ffeadc" : color}
+            color={color === secondaryColor ? primaryColor : color}
+            bgColor={color === tertiaryColor ? primaryColor : color}
+            borderColor={color === tertiaryColor ? primaryColor : color}
             fontSize={[12, 20, 22]}
             className="menuOption"
             onClick={() => navigateToPage(text, page)}
@@ -42,7 +43,7 @@ function Home(props: HomeProps) {
                     <p className="pfpDescription">A plplane moves through the air, the air flows over and under its wings. The shape of the wings is carefully designed to create lift, which is the force that allows the plane to rise into the air and stay airborne. The engines of a plane provide the power needed to overcome the resistance of the air and move the plane forward through the air at high speeds.</p>
 
                 </Center>
-                <Center>{createOption("black", "See Experience", "experience")}
+                <Center>{createOption(secondaryColor, "See Experience", "experience")}
                 </Center></Box>
             <Box className="endPage" />
         </div>

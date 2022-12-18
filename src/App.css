@@ -1,9 +1,14 @@
+:root {
+  --primary-color: #ffeadc;
+  --secondary-color: black;
+  --tertiary-color: grey;
+}
 .App {
   text-align: center;
 }
 
 .appContainer{
-  background-color: #ffeadc;
+  background-color: var(--primary-color);
   overflow-x: hidden;
 }
 .appContainer {
@@ -19,10 +24,10 @@
 }
 #top {
   height: 50px;
-  background: #ffeadc;
+  background: var(--primary-color);
 }
 #bottom {
-  background: #ffeadc;
+  background: var(--primary-color);
   flex: 1;
 }
 .App-logo {
