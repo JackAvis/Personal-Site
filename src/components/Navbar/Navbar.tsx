@@ -21,7 +21,7 @@ function Navbar(props: NavBarProps) {
             window.removeEventListener('resize', handleWindowSizeChange);
         }
     }, []);
-    const isMobile = width <= 768;
+    const isMobile = width <= 800;
     /* page navigation */
     let optionSelected = props.optionSelected;
     let navigate = useNavigate();
@@ -98,6 +98,17 @@ function Navbar(props: NavBarProps) {
                     {optionSelected === 'Experience' ? createMobileOption(secondaryColor, "Experience", "experience") : createMobileOption(tertiaryColor, "Experience", "experience")}
                     <MenuDivider />
                     {optionSelected === 'Contact' ? createMobileOption(secondaryColor, "Contact", "contact") : createMobileOption(tertiaryColor, "Contact", "contact")}
+                    <MenuDivider />
+                    <MenuItem>
+                        <Flex className="iconContainer" justify='left' w='100%' paddingTop='1vh'>
+                            <Center>
+                                {createMobileIcon(githubLogo, '3.45vh', 'https://github.com/Jackson-Davis1')}
+                                <Spacer />
+                                {createMobileIcon(linkedinLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175')}
+                            </Center>
+                        </Flex>
+                    </MenuItem>
+
                 </MenuList>
             </Menu>
         </Flex>)
@@ -108,6 +119,16 @@ function Navbar(props: NavBarProps) {
             <LinkBox>
                 <Link href={link} isExternal>
                     <Image className="icon" src={icon} justifyContent='left' boxSize={size} alt="Logo" />
+                </Link>
+            </LinkBox>
+
+        )
+    }
+    const createMobileIcon = (icon: string, size: string, link: string) => {
+        return (
+            <LinkBox>
+                <Link href={link} isExternal>
+                    <Image className="mobileIcon" src={icon} justifyContent='left' boxSize={size} alt="Logo" />
                 </Link>
             </LinkBox>
 

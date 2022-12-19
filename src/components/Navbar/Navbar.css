@@ -139,7 +139,9 @@
 }
 
 /* css for home page */
-
+.mobileIcon{
+    margin-top: -3vh;
+}
 .pfp{
     margin-top: 2vh;
     border-radius: 1000px;
