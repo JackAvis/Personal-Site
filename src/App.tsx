@@ -11,7 +11,7 @@ function App() {
   const [optionSelected, setOptionSelected] = useState("");
   return (
     <Box className='appContainer' alignItems='center'>
-      <Box className='appContainer' maxWidth='90em' minWidth='15em' width='100vw'>
+      <Box className='appContainer'  minWidth='15em' width='100vw'>
         <Router> 
           <Navbar optionSelected={optionSelected} />
           <Routes>

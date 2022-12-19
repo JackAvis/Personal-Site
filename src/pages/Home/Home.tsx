@@ -1,7 +1,7 @@
 import { Center, Box, Image } from '@chakra-ui/react'
 import { useNavigate } from "react-router-dom";
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import {primaryColor, secondaryColor, tertiaryColor} from  '../../../src/Constants'
+import { primaryColor, secondaryColor, tertiaryColor } from '../../../src/Constants'
 import pfp from "./defaultpfp.jpg"
 
 type HomeProps = {
@@ -32,6 +32,7 @@ function Home(props: HomeProps) {
     return (
         <div>
             <Box className="textContainer">
+                <Center><h1 className="pfpTitle">About Me</h1></Center>
                 <Center>
                     <Box className="pfpContainer">
                         <Image boxSize='40vh' src={pfp} className="pfp"></Image>
