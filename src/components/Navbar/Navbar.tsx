@@ -19,6 +19,7 @@ function Navbar(props: NavBarProps) {
     let tertiaryColor = getComputedStyle(document.documentElement).getPropertyValue('--tertiary-color');
     const [width, setWidth] = useState<number>(window.innerWidth);
     const [first, setFirst] = useState(true);
+    const [darkMode, setDarkMode] = useState(false);
     function handleWindowSizeChange() {
         setWidth(window.innerWidth);
     }
@@ -43,6 +44,7 @@ function Navbar(props: NavBarProps) {
     }
 
     function handleDarkModeButton(page: string) {
+        setDarkMode(!darkMode);
         if (page === "Home") {
             navigate("/");
         }
