@@ -95,10 +95,11 @@ function Navbar(props: NavBarProps) {
                 <Center><Flex marginRight='1vw' paddingBottom='1.2vh' onClick={() => handleDarkModeButton(props.optionSelected)}><DarkModeIcon></DarkModeIcon></Flex></Center>
 
                     <Center>
-                        {secondaryColor === 'black' ? createIcon(githubLogo, '3.45vh', 'https://github.com/Jackson-Davis1') : createIcon(githubWhiteLogo, '3.45vh', 'https://github.com/Jackson-Davis1')}
+                        {secondaryColor === 'black' || first ? createIcon(githubLogo, '3.45vh', 'https://github.com/Jackson-Davis1') : createIcon(githubWhiteLogo, '3.45vh', 'https://github.com/Jackson-Davis1')}
                         <Spacer />
-                        {secondaryColor === 'black' ? createIcon(linkedinLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175') : createIcon(linkedinWhiteLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175')}
+                        {secondaryColor === 'black'|| first ? createIcon(linkedinLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175') : createIcon(linkedinWhiteLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175')}
                     </Center>
+                    {setFirstFalse()}
                 </Flex>
             </Stack>)
     }
