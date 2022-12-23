@@ -1,7 +1,6 @@
 import { Center, Box, Image } from '@chakra-ui/react'
 import { useNavigate } from "react-router-dom";
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import { primaryColor, secondaryColor, tertiaryColor } from '../../../src/Constants'
 import pfp from "./defaultpfp.jpg"
 
 type HomeProps = {
@@ -9,11 +8,14 @@ type HomeProps = {
 }
 
 function Home(props: HomeProps) {
+    let primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color');
+    let secondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
+    let tertiaryColor = getComputedStyle(document.documentElement).getPropertyValue('--tertiary-color');
     props.setOption("Home");
     let navigate = useNavigate();
     function navigateToPage(text: string, page: string) {
         navigate(page);
-        props.setOption("Experience");
+        props.setOption("Experiences");
     }
 
     const createOption = (color: string, text: string, page: string) => {

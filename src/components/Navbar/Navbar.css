@@ -7,33 +7,67 @@
     border-radius: 5px;
 }
 
-.iconContainer{
+.iconContainer {
     margin-top: 2vh;
 }
-.icon{
+
+.icon {
     margin-top: 0px;
     transition: margin-top ease-in 0.1s;
 }
 
-.icon:hover{
-    margin-top:-1vh;
+.icon:hover {
+    margin-top: -1vh;
 }
-.nameMobile{
+
+.nameMobile {
     color: var(--secondary-color);
     font-weight: bold;
     font-size: 25px;
 }
 
-.name{
+.MoonIcon {
+    margin-top: 1.2vh;
+    padding: 5px;
+    border-radius: 13px;
+    transition: background-color .75s ease-in-out;
+    transition: color 1 ease;
+
+}
+
+.MoonIcon:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+
+}
+
+.SunIcon {
+    margin-top: 1.2vh;
+    padding: 5px;
+    border-radius: 13px;
+    transition: background-color .75s ease-in-out;
+    transition: color 1 ease;
+
+}
+
+.SunIcon:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+
+}
+
+.name {
     color: var(--secondary-color);
     font-weight: bold;
-    font-size: 1.75vh;
+    font-size: 25px;
     margin-right: 1vw;
     margin-top: 1.2vh;
 }
-.name:hover{
+
+.name:hover {
     cursor: pointer;
 }
+
 .mobileMenuOption {
     transition: color 1 ease;
     transition: border-color 1s ease-in-out;
@@ -42,6 +76,20 @@
     border-width: .3vh;
     border-radius: 10px;
     padding: .5vh;
+    color: var(--tertiary-color);
+}
+.optionNoAnimation{
+    margin-bottom: 1vh;
+    margin-top: 2vh;
+    margin-right: 1vw;
+    margin-left: 2vh;
+    transition: color 1 ease;
+    border-color: var(--primary-color);
+    border-width: .3vh;
+    border-radius: 20px;
+    padding: .5vh;
+    padding-left: 11px;
+    padding-right: 10px;
     color: var(--tertiary-color);
 }
 .menuOption {
@@ -80,7 +128,6 @@
 
 .sectionContainer {
     border-color: var(--secondary-color);
-
     border-bottom-width: 3px;
     border-top-width: 3px;
     border-radius: 10px;
@@ -119,7 +166,7 @@
     padding-top: 2vh;
 }
 
-.endPage{
+.endPage {
     padding-top: 3vh;
 }
 
@@ -139,13 +186,15 @@
 }
 
 /* css for home page */
-.mobileIcon{
+.mobileIcon {
     margin-top: -3vh;
 }
-.pfp{
+
+.pfp {
     margin-top: 2vh;
     border-radius: 1000px;
 }
+
 .pfpTitle {
     font-size: 4.5vh;
     padding-top: 2vh;

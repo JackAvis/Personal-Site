@@ -1,10 +1,11 @@
-import { Box, Flex, Spacer, Center } from '@chakra-ui/react'
+import { Box, Flex, Spacer } from '@chakra-ui/react'
 import { DownloadIcon } from '@chakra-ui/icons'
-import {primaryColor, secondaryColor, tertiaryColor} from  '../../../src/Constants'
 type ExperienceProps = {
     setOption: Function;
 }
 function Experience(props: ExperienceProps) {
+    let primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color');
+    let secondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
     props.setOption("Experience");
     const onButtonClick = () => {
         fetch('sample.pdf').then(response => {
@@ -45,7 +46,7 @@ function Experience(props: ExperienceProps) {
 
                     </ul>
                 </Box>
-                <Flex alignContent="left">
+                <Flex justifyItems='left'>
                     <Spacer />
                     <Box
                         color={primaryColor}

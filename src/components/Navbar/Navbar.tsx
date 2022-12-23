@@ -4,14 +4,21 @@ import { useState, useEffect } from 'react';
 import { Stack, MenuDivider, Menu, MenuItem, IconButton, MenuList, MenuButton, Box, Text, Center, Spacer, Flex, Image, Link, LinkBox } from '@chakra-ui/react'
 import linkedinLogo from './Icons/Linkedin.png'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import DarkModeIcon from "../DarkModeIcon";
 import githubLogo from './Icons/Github.png'
-import { primaryColor, secondaryColor, tertiaryColor } from '../../../src/Constants'
+import githubWhiteLogo from './Icons/GithubWhite.png'
+import linkedinWhiteLogo from './Icons/LinkedinWhite.png'
+
 type NavBarProps = {
     optionSelected: string;
 }
 function Navbar(props: NavBarProps) {
     /* detect mobile usage */
+    let primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color');
+    let secondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
+    let tertiaryColor = getComputedStyle(document.documentElement).getPropertyValue('--tertiary-color');
     const [width, setWidth] = useState<number>(window.innerWidth);
+    const [first, setFirst] = useState(true);
     function handleWindowSizeChange() {
         setWidth(window.innerWidth);
     }
@@ -28,13 +35,29 @@ function Navbar(props: NavBarProps) {
     function navigateToPage(text: string, page: string) {
         navigate(page);
     }
+    function setFirstFalse() {
+        if (secondaryColor === '#fafafa' && first) {
+            setFirst(false);
+        }
+        return (<div></div>)
+    }
+
+    function handleDarkModeButton(page: string) {
+        if (page === "Home") {
+            navigate("/");
+        }
+        else {
+            navigate(page);
+        }
+
+    }
 
     const createOption = (color: string, text: string, page: string) => {
         return (<Box
             color={color === secondaryColor ? primaryColor : color}
             bgColor={color === tertiaryColor ? primaryColor : color}
             borderColor={color === tertiaryColor ? primaryColor : color}
-            fontSize={[12, 20, 22]}
+            fontSize={[12, 13, 13]}
             className="menuOption"
             onClick={() => navigateToPage(text, page)}
         >
@@ -43,7 +66,8 @@ function Navbar(props: NavBarProps) {
     }
 
     const createMobileOption = (color: string, text: string, page: string) => {
-        return (<MenuItem onClick={() => navigateToPage(text, page)}>
+        return (<MenuItem bgColor={primaryColor} onClick={() => navigateToPage(text, page)}>
+
             <Box
                 color={color === secondaryColor ? primaryColor : color}
                 bgColor={color === tertiaryColor ? primaryColor : color}
@@ -67,10 +91,12 @@ function Navbar(props: NavBarProps) {
                     {optionSelected === 'Contact' ? createOption(secondaryColor, "Contact", "contact") : createOption(tertiaryColor, "Contact", "contact")}
                 </Flex>
                 <Spacer />
+                <Center><Box onClick={() => handleDarkModeButton(props.optionSelected)}><DarkModeIcon></DarkModeIcon></Box></Center>
                 <Flex className="iconContainer" justify='right' w='100%' paddingTop='1vh'>
                     <Center>
-                        {createIcon(githubLogo, '3.45vh', 'https://github.com/Jackson-Davis1')}
-                        {createIcon(linkedinLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175')}
+                        {secondaryColor === 'black' ? createIcon(githubLogo, '3.45vh', 'https://github.com/Jackson-Davis1') : createIcon(githubWhiteLogo, '3.45vh', 'https://github.com/Jackson-Davis1')}
+                        <Spacer />
+                        {secondaryColor === 'black' ? createIcon(linkedinLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175') : createIcon(linkedinWhiteLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175')}
                     </Center>
                 </Flex>
             </Stack>)
@@ -78,7 +104,10 @@ function Navbar(props: NavBarProps) {
     const mobileMenu = () => {
         return (<Flex className="mobileMenuContainer" justify='right'>
             <Center><Text className="nameMobile" whiteSpace='nowrap' onClick={() => navigateToPage("About Me", "/")}> Jackson Davis</Text></Center>
+
             <Spacer />
+            <Center><Box onClick={() => handleDarkModeButton(props.optionSelected)} marginBottom="1vw" marginRight="1vh"><DarkModeIcon></DarkModeIcon></Box></Center>
+
             <Menu>
                 <MenuButton
                     as={IconButton}
@@ -92,26 +121,28 @@ function Navbar(props: NavBarProps) {
                     icon={<HamburgerIcon />}
                     variant='outline'
                 />
-                <MenuList>
+
+                <MenuList bgColor={primaryColor}>
                     {optionSelected === 'Home' ? createMobileOption(secondaryColor, "About Me", "/") : createMobileOption(tertiaryColor, "About Me", "/")}
                     <MenuDivider />
                     {optionSelected === 'Experience' ? createMobileOption(secondaryColor, "Experience", "experience") : createMobileOption(tertiaryColor, "Experience", "experience")}
                     <MenuDivider />
                     {optionSelected === 'Contact' ? createMobileOption(secondaryColor, "Contact", "contact") : createMobileOption(tertiaryColor, "Contact", "contact")}
                     <MenuDivider />
-                    <MenuItem>
+                    <MenuItem bgColor={primaryColor}>
                         <Flex className="iconContainer" justify='left' w='100%' paddingTop='1vh'>
                             <Center>
-                                {createMobileIcon(githubLogo, '3.45vh', 'https://github.com/Jackson-Davis1')}
+                                {secondaryColor === 'black' || first ? createMobileIcon(githubLogo, '3.45vh', 'https://github.com/Jackson-Davis1') : createMobileIcon(githubWhiteLogo, '3.45vh', 'https://github.com/Jackson-Davis1')}
                                 <Spacer />
-                                {createMobileIcon(linkedinLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175')}
+                                {secondaryColor === 'black' || first ? createMobileIcon(linkedinLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175') : createMobileIcon(linkedinWhiteLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175')}
                             </Center>
+                            {setFirstFalse()}
                         </Flex>
                     </MenuItem>
-
                 </MenuList>
             </Menu>
-        </Flex>)
+        </Flex>
+        )
 
     }
     const createIcon = (icon: string, size: string, link: string) => {
