@@ -1,5 +1,6 @@
 import { Box, Flex, Spacer } from '@chakra-ui/react'
 import { DownloadIcon } from '@chakra-ui/icons'
+import { useState, useEffect } from 'react';
 type ExperienceProps = {
     setOption: Function;
 }
@@ -7,6 +8,16 @@ function Experience(props: ExperienceProps) {
     let primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color');
     let secondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
     props.setOption("Experience");
+    const[darkMode, setDarkMode] = useState(false);
+    const handleDarkMode = () => {
+        if (secondaryColor === 'black'){
+            setDarkMode(false);
+        }
+        else{
+            setDarkMode(true);
+        }
+        return (<div></div>)
+    }
     const onButtonClick = () => {
         fetch('sample.pdf').then(response => {
             response.blob().then(blob => {

@@ -4,7 +4,7 @@ import { Center } from '@chakra-ui/react'
 
 
 function DarkModeIcon() {
-    const [isDarkMode, setDarkMode] = useState(false);
+    const [isDarkMode, setDarkMode] = useState(true);
     let secondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
     function icon() {
         if (isDarkMode) {

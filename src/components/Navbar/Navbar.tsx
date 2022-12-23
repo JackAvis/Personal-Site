@@ -37,7 +37,7 @@ function Navbar(props: NavBarProps) {
         navigate(page);
     }
     function setFirstFalse() {
-        if (secondaryColor === '#fafafa' && first) {
+        if (secondaryColor === 'black' && first) {
             setFirst(false);
         }
         return (<div></div>)
@@ -97,9 +97,9 @@ function Navbar(props: NavBarProps) {
                 <Center><Flex marginRight='1vw' paddingBottom='1.2vh' onClick={() => handleDarkModeButton(props.optionSelected)}><DarkModeIcon></DarkModeIcon></Flex></Center>
 
                     <Center>
-                        {secondaryColor === 'black' || first ? createIcon(githubLogo, '3.45vh', 'https://github.com/Jackson-Davis1') : createIcon(githubWhiteLogo, '3.45vh', 'https://github.com/Jackson-Davis1')}
+                        {secondaryColor === '#fafafa'|| first ? createIcon(githubWhiteLogo, '3.45vh', 'https://github.com/Jackson-Davis1') : createIcon(githubLogo, '3.45vh', 'https://github.com/Jackson-Davis1')}
                         <Spacer />
-                        {secondaryColor === 'black'|| first ? createIcon(linkedinLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175') : createIcon(linkedinWhiteLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175')}
+                        {secondaryColor === '#fafafa'|| first ? createIcon(linkedinWhiteLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175') : createIcon(linkedinLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175')}
                     </Center>
                     {setFirstFalse()}
                 </Flex>
@@ -108,10 +108,7 @@ function Navbar(props: NavBarProps) {
     const mobileMenu = () => {
         return (<Flex className="mobileMenuContainer" justify='right'>
             <Center><Text className="nameMobile" whiteSpace='nowrap' onClick={() => navigateToPage("About Me", "/")}> Jackson Davis</Text></Center>
-
             <Spacer />
-            <Center><Box onClick={() => handleDarkModeButton(props.optionSelected)} marginBottom="1vw" marginRight="1vh"><DarkModeIcon></DarkModeIcon></Box></Center>
-
             <Menu>
                 <MenuButton
                     as={IconButton}
@@ -136,9 +133,9 @@ function Navbar(props: NavBarProps) {
                     <MenuItem bgColor={primaryColor}>
                         <Flex className="iconContainer" justify='left' w='100%' paddingTop='1vh'>
                             <Center>
-                                {secondaryColor === 'black' || first ? createMobileIcon(githubLogo, '3.45vh', 'https://github.com/Jackson-Davis1') : createMobileIcon(githubWhiteLogo, '3.45vh', 'https://github.com/Jackson-Davis1')}
+                                {createMobileIcon(githubWhiteLogo, '3.45vh', 'https://github.com/Jackson-Davis1') }
                                 <Spacer />
-                                {secondaryColor === 'black' || first ? createMobileIcon(linkedinLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175') : createMobileIcon(linkedinWhiteLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175')}
+                                {createMobileIcon(linkedinWhiteLogo, '3.1vh', 'https://linkedin.com/in/jackson-davis-931a35175')}
                             </Center>
                             {setFirstFalse()}
                         </Flex>

@@ -1,5 +1,7 @@
 import { Center, Box, Image } from '@chakra-ui/react'
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from 'react';
+
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import pfp from "./defaultpfp.jpg"
 
@@ -17,7 +19,16 @@ function Home(props: HomeProps) {
         navigate(page);
         props.setOption("Experiences");
     }
-
+    const[darkMode, setDarkMode] = useState(false);
+    const handleDarkMode = () => {
+        if (secondaryColor === 'black'){
+            setDarkMode(false);
+        }
+        else{
+            setDarkMode(true);
+        }
+        return (<div></div>)
+    }
     const createOption = (color: string, text: string, page: string) => {
         return (<Box
             color={color === secondaryColor ? primaryColor : color}
