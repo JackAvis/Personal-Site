@@ -120,7 +120,6 @@
 .textContainer {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    animation: fadein 2s;
     animation: fadeInAnimation ease 2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;

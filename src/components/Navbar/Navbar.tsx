@@ -91,8 +91,9 @@ function Navbar(props: NavBarProps) {
                     {optionSelected === 'Contact' ? createOption(secondaryColor, "Contact", "contact") : createOption(tertiaryColor, "Contact", "contact")}
                 </Flex>
                 <Spacer />
-                <Center><Box onClick={() => handleDarkModeButton(props.optionSelected)}><DarkModeIcon></DarkModeIcon></Box></Center>
                 <Flex className="iconContainer" justify='right' w='100%' paddingTop='1vh'>
+                <Center><Flex marginRight='1vw' paddingBottom='1.2vh' onClick={() => handleDarkModeButton(props.optionSelected)}><DarkModeIcon></DarkModeIcon></Flex></Center>
+
                     <Center>
                         {secondaryColor === 'black' ? createIcon(githubLogo, '3.45vh', 'https://github.com/Jackson-Davis1') : createIcon(githubWhiteLogo, '3.45vh', 'https://github.com/Jackson-Davis1')}
                         <Spacer />
